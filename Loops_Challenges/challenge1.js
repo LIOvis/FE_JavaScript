@@ -1,7 +1,7 @@
 const prompt = require("prompt-sync")();
 // you might need to run {npm install prompt-sync} in your terminal
 
-let randomInteger = Math.floor(Math.random()(1, 101));
+let randomInteger = Math.floor(Math.random() * (1, 101));
 count = 0;
 
 while (true) {
