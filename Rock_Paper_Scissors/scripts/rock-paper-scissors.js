@@ -31,17 +31,14 @@ function game(a, b) {
 }
 
 while (true) {
-  var userResponse = prompt("Would you like to play a game?\n[ Y / N ]\n>>> ");
+  let userResponse = prompt("Would you like to play a game?\n[ Y / N ]\n>>> ");
   if (userResponse === null) {
     break;
   } else if (userResponse.toLowerCase() === "n") {
     break;
   } else if (userResponse.toLowerCase() === "y") {
     userResponse = Number(prompt("\n(1) Rock\n(2) Paper\n(3) Scissors\n>>> "));
-    randomInteger = Math.floor(Math.random() * (1, 4));
-    if (randomInteger === 0) {
-      randomInteger = 1;
-    }
+    randomInteger = Math.floor(Math.random() * 3) + 1;
     if (userResponse === 1 || userResponse === 2 || userResponse === 3) {
       console.log(game(userResponse, randomInteger));
     } else {
