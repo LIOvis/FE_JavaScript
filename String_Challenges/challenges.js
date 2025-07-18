@@ -4,12 +4,8 @@
 // isString("abc") => true
 // isString(190) => false
 
-function isString(a) {
-  if (typeof a === "string") {
-    return true;
-  } else {
-    return false;
-  }
+function isString(string) {
+  return typeof string === "string";
 }
 
 console.log("\n");
@@ -25,11 +21,12 @@ console.log("\n");
 // isBlankString(" ") => true
 // isBlankString("fjfjf") => false
 
-function isBlankString(a) {
-  if (a === " " || a === "") {
+function isBlankString(string) {
+  if (typeof string === "string") {
+    trimmedString = string.trim();
+  }
+  if (trimmedString === "") {
     return true;
-  } else if (typeof a != "string") {
-    return false;
   } else {
     return false;
   }
@@ -37,8 +34,10 @@ function isBlankString(a) {
 
 console.log(isBlankString(""));
 console.log(isBlankString(" "));
+console.log(isBlankString("           "));
 console.log(isBlankString("fjfjf"));
 console.log(isBlankString(190));
+console.log(isBlankString(undefined));
 
 console.log("\n");
 
@@ -47,11 +46,11 @@ console.log("\n");
 
 // captializeFirst("abcdef") = > "Abcdef"
 
-function captializeFirst(a) {
-  if (typeof a === "string") {
-    return a.charAt(0).toUpperCase() + a.slice(1);
+function captializeFirst(string) {
+  if (typeof string === "string") {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   } else {
-    return String(a) + " is not a string.";
+    return String(string) + " is not a string.";
   }
 }
 
@@ -65,13 +64,13 @@ console.log("\n");
 
 // abbr("Ryan Curtis") => "Ryan C."
 
-function abbr(a) {
-  if (typeof a === "string") {
-    let indexVal = a.indexOf(" ");
-    cut = a.slice(indexVal + 2);
-    return a.replace(cut, ".");
+function abbr(string) {
+  if (typeof string === "string") {
+    let indexVal = string.indexOf(" ");
+    cut = string.slice(indexVal + 2);
+    return string.replace(cut, ".");
   } else {
-    return String(a) + " is not a string.";
+    return String(string) + " is not a string.";
   }
 }
 
@@ -86,13 +85,13 @@ console.log("\n");
 
 // truncate("I am a long sentence", 6) => "I am a..."
 
-function truncate(a, b) {
-  if (typeof a === "string" && typeof b === "number") {
-    if (a.length > b) {
-      cut = a.slice(b);
-      return a.replace(cut, "...");
+function truncate(string, num) {
+  if (typeof string === "string" && typeof num === "number") {
+    if (string.length > num) {
+      cut = string.slice(num);
+      return string.replace(cut, "...");
     } else {
-      return a;
+      return string;
     }
   } else {
     return "Invalid arguments";

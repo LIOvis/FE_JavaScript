@@ -6,10 +6,9 @@
 
 print('\n')
 
-def is_string(a):
-    if type(a) == str:
-        return True
-    return False
+def is_string(string):
+    return type(string) == str
+       
 
 print(is_string("abc"))
 print(is_string(190))
@@ -23,14 +22,18 @@ print('\n')
 # isBlankString(" ") => true
 # isBlankString("fjfjf") => false
 
-def is_blank_str(a):
-    if a == '' or a == ' ':
-        return True
+def is_blank_str(string):
+    if type(string) == str:
+        trimmed_string = string.strip()
+        if trimmed_string == '':
+            return True
     return False
 
 print(is_blank_str(''))
 print(is_blank_str(" "))
+print(is_blank_str("        "))
 print(is_blank_str('fjfjfj'))
+print(is_blank_str(8))
 
 print('\n')
 
@@ -39,11 +42,11 @@ print('\n')
 
 # captializeFirst("abcdef") = > "Abcdef"
 
-def capitalize_first(a):
-    if type(a) == str:
-        first = a[0]
-        return a.replace(first, first.upper())
-    return f'{a} is not a string.'
+def capitalize_first(string):
+    if type(string) == str:
+        first = string[0]
+        return string.replace(first, first.upper())
+    return f'{string} is not a string.'
 
 print(capitalize_first('abcdef'))
 print(capitalize_first('abcdef ghijkl'))
