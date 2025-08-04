@@ -1,3 +1,116 @@
+body {
+  font-family: fantasy, monospace;
+  background-color: midnightblue;
+  color: aliceblue;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: aliceblue;
+}
+
 .hidden {
   display: none;
+}
+
+.login-section {
+  background-color: royalblue;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(57, 101, 79, 0.5);
+  width: 300px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 90%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid navy;
+  border-radius: 5px;
+}
+
+button {
+  background-color: navy;
+  color: aliceblue;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  width: 50%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  font-family: fantasy, monospaceß;
+}
+
+button:hover {
+  transition: 0.3s ease-out;
+  background-color: #030398;
+  color: #cae1f5;
+}
+
+.atm-menu {
+  margin-top: 20px;
+}
+
+.deposit-section,
+.withdraw-section {
+  background-color: royalblue;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(57, 101, 79, 0.5);
+  width: 300px;
+  margin: 15px auto 0;
+}
+
+.deposit {
+  color: mediumseagreen;
+  font-weight: bold;
+}
+
+.withdraw {
+  color: tomato;
+  font-weight: bold;
+}
+
+.depost-section input,
+.withdraw-section input {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.error {
+  color: tomato;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.transaction-history {
+  background-color: royalblue;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(57, 101, 79, 0.5);
+  width: 300px;
+  margin: 15px auto 0;
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-list li {
+  background-color: midnightblue;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
 }

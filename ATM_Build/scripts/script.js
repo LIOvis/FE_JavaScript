@@ -10,7 +10,7 @@ class User {
 
   addTransaction(type, amount) {
     this.transactions.push({ type, amount });
-    // add another function
+    updateTransactionHistory(type, amount);
   }
 }
 
@@ -119,10 +119,25 @@ function completeTransaction(type) {
   } else {
     toggleVisibility(errorClass, false); // test this
     loggedInUser.balance += type === "deposit" ? amount : -amount;
-    loggedInUser.addTransaction(type === "deposit" ? "deposit" : "withdrawal");
+    loggedInUser.addTransaction(
+      type === "deposit" ? "Deposit" : "Withdrawal",
+      amount
+    );
 
     showBalance();
     document.getElementById(amountInputId).value = "";
     toggleVisibility(`${type}-section`, false);
+  }
+}
+
+function updateTransactionHistory(type, amount) {
+  const transactionList = document.querySelector(".transaction-list");
+  const transactionItem = document.createElement("li");
+  transactionItem.classList.add(type === "Deposit" ? "deposit" : "withdraw");
+  transactionItem.textContent = `${type}: $${amount.toFixed(2)}`;
+  transactionList.appendChild(transactionItem);
+
+  while (transactionList.children.length > 5) {
+    transactionList.removeChild(transactionList.firstChild);
   }
 }
